@@ -1,5 +1,3 @@
-
-
 import SwiftUI
 import WebKit
 
@@ -7,7 +5,7 @@ struct WebPageView: UIViewRepresentable {
     
     typealias UIViewType = WKWebView
     
-    @Binding var token: String
+    @Binding var authorizationInfo: AuthorizationInfo?
     
     func makeUIView(context: Context) -> WKWebView {
         let webView = WKWebView()
@@ -42,18 +40,18 @@ struct WebPageView: UIViewRepresentable {
     }
     
     func makeCoordinator() -> WebViewCoordinator {
-        return WebViewCoordinator { token in
-            self.token = token
+        return WebViewCoordinator { authorizationInfo in
+            self.authorizationInfo = authorizationInfo
         }
     }
 }
 
-class WebViewCoordinator: NSObject, WKNavigationDelegate {
+final class WebViewCoordinator: NSObject, WKNavigationDelegate {
     
-    var token: (String) -> Void
+    var authorizationInfo: (AuthorizationInfo) -> Void
     
-    init(token: @escaping (String) -> Void) {
-        self.token = token
+    init(authorizationInfo: @escaping (AuthorizationInfo) -> Void) {
+        self.authorizationInfo = authorizationInfo
     }
     
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
@@ -75,9 +73,15 @@ class WebViewCoordinator: NSObject, WKNavigationDelegate {
                 return dict
             }
         
-        if let accessToken = params["access_token"] {
-            self.token(accessToken)
+        guard let accessToken = params["access_token"],
+              let userId = Int(params["user_id"] ?? ""),
+              let expiresIn = Int(params["expires_in"] ?? "") else {
+            decisionHandler(.cancel)
+            return
         }
+        
+        let authorizationInfo = AuthorizationInfo(token: accessToken, userId: userId, expiresIn: expiresIn)
+        self.authorizationInfo(authorizationInfo)
         
         decisionHandler(.cancel)
     }

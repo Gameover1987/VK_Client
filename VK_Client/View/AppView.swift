@@ -1,22 +1,47 @@
-//
-//  AppView.swift
-//  VK_Client
-//
-//  Created by Вячеслав on 19.02.2023.
-//
 
 import SwiftUI
 
 struct AppView: View {
-    @EnvironmentObject var loginViewModel: LoginViewModel
+    
+    @ObservedObject var friendsViewModel = FriendsViewModel(vkApi: VkApi.shared)
     
     var body: some View {
-        Text(loginViewModel.token)
+        TabView {
+            
+            ProfileView()
+                .tabItem {
+                    Image(systemName: "house")
+                }
+            
+            FriendsView()
+                .tabItem {
+                    Image(systemName: "person.2")
+                }
+            
+            ScrollView {
+                
+            }.tabItem {
+                Image(systemName: "message")
+            }
+            
+            ScrollView {
+                
+            }.tabItem {
+                Image(systemName: "photo")
+            }
+            
+            ScrollView {
+                
+            }.tabItem {
+                Image(systemName: "video")
+            }
+            
+        }
     }
 }
 
 struct AppView_Previews: PreviewProvider {
     static var previews: some View {
-        AppView()
+        AppView().environmentObject(VkApi.shared)
     }
 }

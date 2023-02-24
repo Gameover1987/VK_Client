@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8022A4EB29A207B400041D72 /* VK_ClientApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8022A4EA29A207B400041D72 /* VK_ClientApp.swift */; };
-		8022A4ED29A207B400041D72 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8022A4EC29A207B400041D72 /* ContentView.swift */; };
 		8022A4EF29A207B500041D72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8022A4EE29A207B500041D72 /* Assets.xcassets */; };
 		8022A4F229A207B500041D72 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8022A4F129A207B500041D72 /* Preview Assets.xcassets */; };
 		8022A4F429A207B500041D72 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8022A4F329A207B500041D72 /* Persistence.swift */; };
@@ -16,8 +15,14 @@
 		8022A50129A207B500041D72 /* VK_ClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8022A50029A207B500041D72 /* VK_ClientTests.swift */; };
 		808444D829A20C190023AFCF /* WebPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808444D729A20C190023AFCF /* WebPageView.swift */; };
 		808444DA29A210880023AFCF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808444D929A210880023AFCF /* LoginView.swift */; };
-		808444DC29A21FBA0023AFCF /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808444DB29A21FBA0023AFCF /* LoginViewModel.swift */; };
 		808444DE29A221890023AFCF /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808444DD29A221890023AFCF /* AppView.swift */; };
+		80F5580429A8F88B000D3661 /* VkApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5580329A8F88B000D3661 /* VkApiProtocol.swift */; };
+		80F5580629A90A11000D3661 /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5580529A90A11000D3661 /* FriendsViewModel.swift */; };
+		80F5580829A90A34000D3661 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5580729A90A34000D3661 /* Friend.swift */; };
+		80F5580B29A90F3F000D3661 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 80F5580A29A90F3F000D3661 /* Alamofire */; };
+		80F5580E29A91A9F000D3661 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5580D29A91A9F000D3661 /* ProfileView.swift */; };
+		80F5581029A91F07000D3661 /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5580F29A91F07000D3661 /* FriendsView.swift */; };
+		80F5581329A92126000D3661 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 80F5581229A92126000D3661 /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +45,6 @@
 /* Begin PBXFileReference section */
 		8022A4E729A207B400041D72 /* VK_Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VK_Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8022A4EA29A207B400041D72 /* VK_ClientApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VK_ClientApp.swift; sourceTree = "<group>"; };
-		8022A4EC29A207B400041D72 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		8022A4EE29A207B500041D72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8022A4F129A207B500041D72 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8022A4F329A207B500041D72 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -50,8 +54,12 @@
 		8022A50629A207B500041D72 /* VK_ClientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VK_ClientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		808444D729A20C190023AFCF /* WebPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPageView.swift; sourceTree = "<group>"; };
 		808444D929A210880023AFCF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		808444DB29A21FBA0023AFCF /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		808444DD29A221890023AFCF /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
+		80F5580329A8F88B000D3661 /* VkApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkApiProtocol.swift; sourceTree = "<group>"; };
+		80F5580529A90A11000D3661 /* FriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
+		80F5580729A90A34000D3661 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
+		80F5580D29A91A9F000D3661 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		80F5580F29A91F07000D3661 /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				80F5581329A92126000D3661 /* SDWebImageSwiftUI in Frameworks */,
+				80F5580B29A90F3F000D3661 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				808444D629A208320023AFCF /* Storage */,
+				80F5580329A8F88B000D3661 /* VkApiProtocol.swift */,
+				80F5580729A90A34000D3661 /* Friend.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,7 +149,7 @@
 		808444D429A2080E0023AFCF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				808444DB29A21FBA0023AFCF /* LoginViewModel.swift */,
+				80F5580529A90A11000D3661 /* FriendsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -145,11 +157,11 @@
 		808444D529A2081E0023AFCF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8022A4EC29A207B400041D72 /* ContentView.swift */,
+				80F5580C29A9197E000D3661 /* Auth */,
 				8022A4F029A207B500041D72 /* Preview Content */,
-				808444D729A20C190023AFCF /* WebPageView.swift */,
-				808444D929A210880023AFCF /* LoginView.swift */,
 				808444DD29A221890023AFCF /* AppView.swift */,
+				80F5580D29A91A9F000D3661 /* ProfileView.swift */,
+				80F5580F29A91F07000D3661 /* FriendsView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -161,6 +173,15 @@
 				8022A4F529A207B500041D72 /* VK_Client.xcdatamodeld */,
 			);
 			path = Storage;
+			sourceTree = "<group>";
+		};
+		80F5580C29A9197E000D3661 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				808444D729A20C190023AFCF /* WebPageView.swift */,
+				808444D929A210880023AFCF /* LoginView.swift */,
+			);
+			path = Auth;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,6 +200,10 @@
 			dependencies = (
 			);
 			name = VK_Client;
+			packageProductDependencies = (
+				80F5580A29A90F3F000D3661 /* Alamofire */,
+				80F5581229A92126000D3661 /* SDWebImageSwiftUI */,
+			);
 			productName = VK_Client;
 			productReference = 8022A4E729A207B400041D72 /* VK_Client.app */;
 			productType = "com.apple.product-type.application";
@@ -251,6 +276,10 @@
 				Base,
 			);
 			mainGroup = 8022A4DE29A207B400041D72;
+			packageReferences = (
+				80F5580929A90F3F000D3661 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				80F5581129A92126000D3661 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 8022A4E829A207B400041D72 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -298,9 +327,12 @@
 				8022A4F729A207B500041D72 /* VK_Client.xcdatamodeld in Sources */,
 				808444D829A20C190023AFCF /* WebPageView.swift in Sources */,
 				808444DE29A221890023AFCF /* AppView.swift in Sources */,
-				8022A4ED29A207B400041D72 /* ContentView.swift in Sources */,
+				80F5580429A8F88B000D3661 /* VkApiProtocol.swift in Sources */,
+				80F5580829A90A34000D3661 /* Friend.swift in Sources */,
 				8022A4EB29A207B400041D72 /* VK_ClientApp.swift in Sources */,
-				808444DC29A21FBA0023AFCF /* LoginViewModel.swift in Sources */,
+				80F5581029A91F07000D3661 /* FriendsView.swift in Sources */,
+				80F5580E29A91A9F000D3661 /* ProfileView.swift in Sources */,
+				80F5580629A90A11000D3661 /* FriendsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -623,6 +655,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		80F5580929A90F3F000D3661 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		80F5581129A92126000D3661 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		80F5580A29A90F3F000D3661 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 80F5580929A90F3F000D3661 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		80F5581229A92126000D3661 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 80F5581129A92126000D3661 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		8022A4F529A207B500041D72 /* VK_Client.xcdatamodeld */ = {
