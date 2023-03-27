@@ -7,18 +7,12 @@ protocol VkApiProtocol : ObservableObject {
     var authorizationInfo: AuthorizationInfo? {get set}
     
     func getFriends(completion: @escaping (Result<[Friend], Error>) -> Void)
-}
-
-struct AuthorizationInfo {
-    let token: String
     
-    let userId: Int
-    
-    let expiresIn: Int
+    func getUserInfo(completion: @escaping (Result<UserInfo, Error>) -> Void)
 }
 
 final class VkApi : ObservableObject, VkApiProtocol {
-    
+
     static let shared = VkApi()
     
     private init() { }
@@ -51,9 +45,39 @@ final class VkApi : ObservableObject, VkApiProtocol {
                 completion(.success(friends))
             }
             catch(let error) {
-                print(error.localizedDescription)
+                print(error)
             }
-      
+        }
+    }
+    
+    func getUserInfo(completion: @escaping (Result<UserInfo, Error>) -> Void) {
+        guard let authorizationInfo = authorizationInfo else {return}
+        
+        let url = "https://api.vk.com/method/users.get"
+        
+        let params: Parameters = [
+            "access_token": authorizationInfo.token,
+            "fields": "bdate, city, country, photo_200, status",
+            "v": "5.131"
+        ]
+        
+        AF.request(url, method: .post, parameters: params).response { result in
+            
+            if let error = result.error {
+                print(error)
+                completion(.failure(error))
+            }
+            
+            guard let data = result.data else {return}
+     
+            do {
+                let decoder = JSONDecoder()
+                let response = try decoder.decode(UserResponse.self, from: data)
+                completion(.success(response.response.first!))
+            }
+            catch(let error) {
+                print(error)
+            }
         }
     }
 }
