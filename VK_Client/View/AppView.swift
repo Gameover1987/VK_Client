@@ -20,6 +20,11 @@ struct AppView: View {
                 .tabItem {
                     Image(systemName: "person.2")
                 }
+            
+            ImageGalleryView()
+                .tabItem {
+                    Image(systemName: "photo")
+                }
         }
     }
 }

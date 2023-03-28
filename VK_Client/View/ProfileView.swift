@@ -10,7 +10,7 @@ struct ProfileView: View {
         VStack {
             WebImage(url: URL(string: profileViewModel.photo))
                 .resizable()
-                .frame(width: 200, height: 200)
+                .frame(width: 250, height: 250)
                 .clipShape(Circle())
             HStack {
                 Text(profileViewModel.firstName)

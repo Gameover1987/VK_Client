@@ -21,7 +21,8 @@ struct WebPageView: UIViewRepresentable {
             URLQueryItem(name: "client_id", value: "51559125"),
             URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
             URLQueryItem(name: "display", value: "mobile"),
-            URLQueryItem(name: "response_type", value: "token")
+            URLQueryItem(name: "response_type", value: "token"),
+            URLQueryItem(name: "scope", value: "friends,notify,photos,wall,email,mail,groups,stats")
         ]
         
         guard let url = urlComponent.url else {
@@ -82,6 +83,8 @@ final class WebViewCoordinator: NSObject, WKNavigationDelegate {
         
         let authorizationInfo = AuthorizationInfo(token: accessToken, userId: userId, expiresIn: expiresIn)
         self.authorizationInfo(authorizationInfo)
+        
+        print(authorizationInfo.token)
         
         decisionHandler(.cancel)
     }

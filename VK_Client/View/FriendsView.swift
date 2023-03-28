@@ -38,7 +38,7 @@ struct FriendItemView : View {
         HStack {
             WebImage(url: URL(string: friend.photo))
                 .resizable()
-                .frame(width: 50, height: 50)
+                .frame(width: 75, height: 75)
                 .clipShape(Circle())
             VStack(alignment: .leading) {
                 Text(friend.firstName)

@@ -9,6 +9,8 @@ protocol VkApiProtocol : ObservableObject {
     func getFriends(completion: @escaping (Result<[Friend], Error>) -> Void)
     
     func getUserInfo(completion: @escaping (Result<UserInfo, Error>) -> Void)
+    
+    func getPhotos(completion: @escaping (Result<[Photo], Error>) -> Void)
 }
 
 final class VkApi : ObservableObject, VkApiProtocol {
@@ -74,6 +76,36 @@ final class VkApi : ObservableObject, VkApiProtocol {
                 let decoder = JSONDecoder()
                 let response = try decoder.decode(UserResponse.self, from: data)
                 completion(.success(response.response.first!))
+            }
+            catch(let error) {
+                print(error)
+            }
+        }
+    }
+    
+    func getPhotos(completion: @escaping (Result<[Photo], Error>) -> Void) {
+        guard let authorizationInfo = authorizationInfo else {return}
+        
+        let url = "https://api.vk.com/method/photos.getAll"
+        
+        let params: Parameters = [
+            "access_token": authorizationInfo.token,
+            "v": "5.131"
+        ]
+        
+        AF.request(url, method: .post, parameters: params).response { result in
+            
+            if let error = result.error {
+                print(error)
+                completion(.failure(error))
+            }
+            
+            guard let data = result.data else {return}
+     
+            do {
+                let decoder = JSONDecoder()
+                let response = try decoder.decode(PhotoResponse.self, from: data)
+                completion(.success(response.response.items))
             }
             catch(let error) {
                 print(error)
