@@ -5,23 +5,21 @@ struct AppView: View {
     
     var body: some View {
         TabView {
-
+            
             ProfileView()
                 .tabItem {
                     Image(systemName: "person")
                 }
             
-            ScrollView {
-                
-            }.tabItem {
-                Image(systemName: "message")
-            }
+            MessengerView()
+                .tabItem {
+                    Image(systemName: "messege")
+                }
             
             FriendsView()
                 .tabItem {
                     Image(systemName: "person.2")
                 }
-            
         }
     }
 }
