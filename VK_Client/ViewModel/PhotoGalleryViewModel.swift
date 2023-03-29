@@ -8,13 +8,17 @@ final class PhotoGalleryViewModel : ObservableObject {
         self.vkApi = vkApi
     }
     
+    @Published var photos: [PhotoViewModel] = []
+    
     func load() {
         vkApi.getPhotos { result in
             switch result {
             case .failure(let error):
                 print(error)
             case .success(let photos):
-                print(photos)
+                self.photos = photos.map({ photo in
+                    return PhotoViewModel(photo: photo)
+                })
             }
         }
     }

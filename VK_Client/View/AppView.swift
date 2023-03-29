@@ -21,7 +21,7 @@ struct AppView: View {
                     Image(systemName: "person.2")
                 }
             
-            ImageGalleryView()
+            PhotoGalleryView()
                 .tabItem {
                     Image(systemName: "photo")
                 }

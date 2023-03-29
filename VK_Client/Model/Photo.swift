@@ -17,7 +17,7 @@ struct Photo : Decodable {
 
     var date: Int
 
-    //var ownerId: Int
+    var ownerId: Int
 
     var text: String
 
@@ -27,7 +27,7 @@ struct Photo : Decodable {
         case id
         case albumId = "album_id"
         case date
-        //case ownerId = "owner_Id"
+        case ownerId = "owner_id"
         case text
         case sizes
     }
