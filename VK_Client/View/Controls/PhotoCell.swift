@@ -32,6 +32,6 @@ struct PhotoCell : View {
             .frame(height: photo.imageHeight)
             .frame(maxWidth: .infinity)
         }
-        .cornerRadius(8)
+        .cornerRadius(2)
     }
 }

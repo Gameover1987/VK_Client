@@ -4,6 +4,9 @@ import Foundation
 final class PhotoGalleryViewModel : ObservableObject {
     private let vkApi: any VkApiProtocol
     
+    private var offset = 0;
+    private var count = 20;
+    
     init (vkApi: any VkApiProtocol) {
         self.vkApi = vkApi
     }
@@ -11,7 +14,8 @@ final class PhotoGalleryViewModel : ObservableObject {
     @Published var photos: [PhotoViewModel] = []
     
     func load() {
-        vkApi.getPhotos { result in
+        
+        vkApi.getPhotos(offset: self.offset, count: self.count) { result in
             switch result {
             case .failure(let error):
                 print(error)
@@ -20,6 +24,8 @@ final class PhotoGalleryViewModel : ObservableObject {
                     return PhotoViewModel(photo: photo)
                 })
             }
+            
+            self.offset += self.count
         }
     }
 }

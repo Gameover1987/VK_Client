@@ -10,7 +10,7 @@ protocol VkApiProtocol : ObservableObject {
     
     func getUserInfo(completion: @escaping (Result<UserInfo, Error>) -> Void)
     
-    func getPhotos(completion: @escaping (Result<[Photo], Error>) -> Void)
+    func getPhotos(offset: Int, count: Int, completion: @escaping (Result<[Photo], Error>) -> Void)
 }
 
 final class VkApi : ObservableObject, VkApiProtocol {
@@ -83,13 +83,15 @@ final class VkApi : ObservableObject, VkApiProtocol {
         }
     }
     
-    func getPhotos(completion: @escaping (Result<[Photo], Error>) -> Void) {
+    func getPhotos(offset: Int, count: Int, completion: @escaping (Result<[Photo], Error>) -> Void) {
         guard let authorizationInfo = authorizationInfo else {return}
         
         let url = "https://api.vk.com/method/photos.getAll"
         
         let params: Parameters = [
             "access_token": authorizationInfo.token,
+            "offset": offset,
+            "count": count,
             "v": "5.131"
         ]
         

@@ -8,15 +8,19 @@ struct CollectionView : View {
     private let columns: [Column]
     
     private let columnsCount = 3
-    private let spacing = 10.0
+    private let spacing = 2.0
     private let cellHeight = 150.0
+    
+    private let loadMore: (() -> Void)?
     
     struct Column: Identifiable {
         let id = UUID()
         var items = [PhotoViewModel]()
     }
     
-    init (items: [PhotoViewModel]) {
+    init (items: [PhotoViewModel], loadMore: (() -> Void)? = nil) {
+        
+        self.loadMore = loadMore
         
         var columns = [Column]()
         for _ in 0 ..< columnsCount {
@@ -55,6 +59,15 @@ struct CollectionView : View {
                             PhotoCell(photo: photo)
                         }
                     }
+                    
+                    Rectangle()
+                        .frame(width: 50, height: 50)
+                        .foregroundColor(.clear)
+                        .onAppear {
+                            if column.items.count > 0 {
+                                loadMore?()
+                            }
+                        }
                 }
             }
         }

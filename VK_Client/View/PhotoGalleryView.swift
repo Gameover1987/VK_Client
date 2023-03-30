@@ -8,7 +8,7 @@ struct PhotoGalleryView: View {
     var body: some View {
         NavigationView {
             ScrollView {
-                CollectionView(items: photoGalleryViewModel.photos)
+                CollectionView(items: photoGalleryViewModel.photos, loadMore: photoGalleryViewModel.load)
                     .navigationTitle("Фотографии")
                     .navigationBarTitleDisplayMode(.inline)
                     .onAppear {
