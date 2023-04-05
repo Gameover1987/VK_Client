@@ -54,7 +54,14 @@ struct CollectionView : View {
                 LazyVStack (spacing: spacing) {
                     ForEach (column.items, id: \.id) { photo in
                         NavigationLink {
-                            
+                            GeometryReader { reader in
+                                WebImage(url: URL(string: photo.largeUrl))
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: reader.size.width,
+                                           height: reader.size.height,
+                                           alignment: .center)
+                            }
                         } label: {
                             PhotoCell(photo: photo)
                         }

@@ -42,3 +42,14 @@ struct ImageSize : Decodable {
     
     var url: String
 }
+
+extension Photo {
+    func getMaxSize() -> ImageSize? {
+        return self.sizes.max { sizeA, sizeB in
+            let squareA = sizeA.width * sizeA.height
+            let squareB = sizeB.width * sizeB.height
+            
+            return squareA < squareB
+        }
+    }
+}

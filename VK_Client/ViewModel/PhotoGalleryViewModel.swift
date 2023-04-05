@@ -11,6 +11,8 @@ final class PhotoGalleryViewModel : ObservableObject {
     
     init (vkApi: any VkApiProtocol) {
         self.vkApi = vkApi
+        
+        offset = -count
     }
     
     @Published var photos: [PhotoViewModel] = []

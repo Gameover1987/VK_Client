@@ -12,7 +12,7 @@ struct PhotoCell : View {
         VStack(alignment: .leading) {
             ZStack {
                 GeometryReader { reader in
-                    WebImage(url: URL(string: photo.url))
+                    WebImage(url: URL(string: photo.previewUrl))
                         .resizable()
                         .scaledToFill()
                         .frame(width: reader.size.width,
