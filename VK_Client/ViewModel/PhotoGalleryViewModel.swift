@@ -11,8 +11,6 @@ final class PhotoGalleryViewModel : ObservableObject {
     
     init (vkApi: any VkApiProtocol) {
         self.vkApi = vkApi
-        
-        offset = -count
     }
     
     @Published var photos: [PhotoViewModel] = []
@@ -22,9 +20,6 @@ final class PhotoGalleryViewModel : ObservableObject {
         if (isLoaded) {
             return
         }
-        
-        offset += count
-        print("Offset = \(offset), Count = \(count)")
         
         vkApi.getPhotos(offset: self.offset, count: self.count) { [weak self] result in
             
@@ -44,5 +39,8 @@ final class PhotoGalleryViewModel : ObservableObject {
                 })
             }
         }
+        
+        offset += count
+        print("Offset = \(offset), Count = \(count)")
     }
 }
