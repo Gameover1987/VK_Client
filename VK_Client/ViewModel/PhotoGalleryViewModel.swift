@@ -7,6 +7,8 @@ final class PhotoGalleryViewModel : ObservableObject {
     private var offset = 0;
     private var count = 20;
     
+    private var isLoaded = false
+    
     init (vkApi: any VkApiProtocol) {
         self.vkApi = vkApi
     }
@@ -15,17 +17,30 @@ final class PhotoGalleryViewModel : ObservableObject {
     
     func load() {
         
-        vkApi.getPhotos(offset: self.offset, count: self.count) { result in
+        if (isLoaded) {
+            return
+        }
+        
+        offset += count
+        print("Offset = \(offset), Count = \(count)")
+        
+        vkApi.getPhotos(offset: self.offset, count: self.count) { [weak self] result in
+            
+            guard let self = self else {return}
+            
             switch result {
             case .failure(let error):
                 print(error)
             case .success(let photos):
-                self.photos = photos.map({ photo in
+                if (photos.isEmpty) {
+                    self.isLoaded = true
+                    return
+                }
+                
+                self.photos += photos.map({ photo in
                     return PhotoViewModel(photo: photo)
                 })
             }
-            
-            self.offset += self.count
         }
     }
 }
