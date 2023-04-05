@@ -6,9 +6,9 @@ struct AppView: View {
     var body: some View {
         TabView {
             
-            ProfileView()
+            NewsfeedView()
                 .tabItem {
-                    Image(systemName: "person")
+                    Image(systemName: "house")
                 }
             
             MessengerView()
@@ -16,14 +16,14 @@ struct AppView: View {
                     Image(systemName: "messege")
                 }
             
-            FriendsView()
-                .tabItem {
-                    Image(systemName: "person.2")
-                }
-            
             PhotoGalleryView()
                 .tabItem {
                     Image(systemName: "photo")
+                }
+            
+            ProfileView()
+                .tabItem {
+                    Image(systemName: "person")
                 }
         }
     }

@@ -13,6 +13,12 @@
 		8022A4F429A207B500041D72 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8022A4F329A207B500041D72 /* Persistence.swift */; };
 		8022A4F729A207B500041D72 /* VK_Client.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8022A4F529A207B500041D72 /* VK_Client.xcdatamodeld */; };
 		8022A50129A207B500041D72 /* VK_ClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8022A50029A207B500041D72 /* VK_ClientTests.swift */; };
+		80421FA929DDADE900AE9FDE /* Newsfeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80421FA829DDADE900AE9FDE /* Newsfeed.swift */; };
+		80421FAE29DDB9FB00AE9FDE /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80421FAD29DDB9FB00AE9FDE /* PostViewModel.swift */; };
+		80421FB029DDBA6C00AE9FDE /* NewsfeedViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80421FAF29DDBA6C00AE9FDE /* NewsfeedViewModelFactory.swift */; };
+		80421FB329DDBDDD00AE9FDE /* NumberExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80421FB229DDBDDD00AE9FDE /* NumberExtensions.swift */; };
+		80421FBA29DDC74D00AE9FDE /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80421FB929DDC74D00AE9FDE /* PostView.swift */; };
+		80421FBC29DDCA6F00AE9FDE /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80421FBB29DDCA6F00AE9FDE /* DateExtensions.swift */; };
 		808444D829A20C190023AFCF /* WebPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808444D729A20C190023AFCF /* WebPageView.swift */; };
 		808444DA29A210880023AFCF /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808444D929A210880023AFCF /* LoginView.swift */; };
 		808444DE29A221890023AFCF /* AppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808444DD29A221890023AFCF /* AppView.swift */; };
@@ -27,11 +33,11 @@
 		80E9F07A29D128F000710522 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E9F07929D128F000710522 /* UserInfo.swift */; };
 		80E9F07D29D12CF900710522 /* AuthorizationInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E9F07C29D12CF900710522 /* AuthorizationInfo.swift */; };
 		80F5580429A8F88B000D3661 /* VkApiProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5580329A8F88B000D3661 /* VkApiProtocol.swift */; };
-		80F5580629A90A11000D3661 /* FriendsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5580529A90A11000D3661 /* FriendsViewModel.swift */; };
+		80F5580629A90A11000D3661 /* NewsfeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5580529A90A11000D3661 /* NewsfeedViewModel.swift */; };
 		80F5580829A90A34000D3661 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5580729A90A34000D3661 /* Friend.swift */; };
 		80F5580B29A90F3F000D3661 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 80F5580A29A90F3F000D3661 /* Alamofire */; };
 		80F5580E29A91A9F000D3661 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5580D29A91A9F000D3661 /* ProfileView.swift */; };
-		80F5581029A91F07000D3661 /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5580F29A91F07000D3661 /* FriendsView.swift */; };
+		80F5581029A91F07000D3661 /* NewsfeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5580F29A91F07000D3661 /* NewsfeedView.swift */; };
 		80F5581329A92126000D3661 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 80F5581229A92126000D3661 /* SDWebImageSwiftUI */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +68,12 @@
 		8022A4FC29A207B500041D72 /* VK_ClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VK_ClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8022A50029A207B500041D72 /* VK_ClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VK_ClientTests.swift; sourceTree = "<group>"; };
 		8022A50629A207B500041D72 /* VK_ClientUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VK_ClientUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		80421FA829DDADE900AE9FDE /* Newsfeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Newsfeed.swift; sourceTree = "<group>"; };
+		80421FAD29DDB9FB00AE9FDE /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		80421FAF29DDBA6C00AE9FDE /* NewsfeedViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedViewModelFactory.swift; sourceTree = "<group>"; };
+		80421FB229DDBDDD00AE9FDE /* NumberExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberExtensions.swift; sourceTree = "<group>"; };
+		80421FB929DDC74D00AE9FDE /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		80421FBB29DDCA6F00AE9FDE /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		808444D729A20C190023AFCF /* WebPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebPageView.swift; sourceTree = "<group>"; };
 		808444D929A210880023AFCF /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		808444DD29A221890023AFCF /* AppView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppView.swift; sourceTree = "<group>"; };
@@ -76,10 +88,10 @@
 		80E9F07929D128F000710522 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		80E9F07C29D12CF900710522 /* AuthorizationInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationInfo.swift; sourceTree = "<group>"; };
 		80F5580329A8F88B000D3661 /* VkApiProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VkApiProtocol.swift; sourceTree = "<group>"; };
-		80F5580529A90A11000D3661 /* FriendsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsViewModel.swift; sourceTree = "<group>"; };
+		80F5580529A90A11000D3661 /* NewsfeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedViewModel.swift; sourceTree = "<group>"; };
 		80F5580729A90A34000D3661 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		80F5580D29A91A9F000D3661 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
-		80F5580F29A91F07000D3661 /* FriendsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
+		80F5580F29A91F07000D3661 /* NewsfeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,11 +143,13 @@
 		8022A4E929A207B400041D72 /* VK_Client */ = {
 			isa = PBXGroup;
 			children = (
-				8022A4EA29A207B400041D72 /* VK_ClientApp.swift */,
-				8022A4EE29A207B500041D72 /* Assets.xcassets */,
+				80421FB129DDBD8400AE9FDE /* Extensions */,
 				808444D329A208080023AFCF /* Model */,
 				808444D529A2081E0023AFCF /* View */,
+				808444DD29A221890023AFCF /* AppView.swift */,
 				808444D429A2080E0023AFCF /* ViewModel */,
+				8022A4EA29A207B400041D72 /* VK_ClientApp.swift */,
+				8022A4EE29A207B500041D72 /* Assets.xcassets */,
 			);
 			path = VK_Client;
 			sourceTree = "<group>";
@@ -156,6 +170,77 @@
 			path = VK_ClientTests;
 			sourceTree = "<group>";
 		};
+		80421FAA29DDB07B00AE9FDE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				80E9F07729D125E500710522 /* ProfileViewModel.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		80421FAB29DDB08400AE9FDE /* Newsfeed */ = {
+			isa = PBXGroup;
+			children = (
+				80421FAF29DDBA6C00AE9FDE /* NewsfeedViewModelFactory.swift */,
+				80F5580529A90A11000D3661 /* NewsfeedViewModel.swift */,
+				80421FAD29DDB9FB00AE9FDE /* PostViewModel.swift */,
+			);
+			path = Newsfeed;
+			sourceTree = "<group>";
+		};
+		80421FAC29DDB08E00AE9FDE /* PhotoGallery */ = {
+			isa = PBXGroup;
+			children = (
+				80E9A2F829D34CD400E78BA8 /* PhotoGalleryViewModel.swift */,
+				80E9A2FA29D34D7F00E78BA8 /* PhotoViewModel.swift */,
+			);
+			path = PhotoGallery;
+			sourceTree = "<group>";
+		};
+		80421FB129DDBD8400AE9FDE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				80421FB229DDBDDD00AE9FDE /* NumberExtensions.swift */,
+				80421FBB29DDCA6F00AE9FDE /* DateExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		80421FB429DDC6A900AE9FDE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				80F5580D29A91A9F000D3661 /* ProfileView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		80421FB529DDC6B900AE9FDE /* Photos */ = {
+			isa = PBXGroup;
+			children = (
+				80ABF8AE29D46F6A00DACD0B /* PhotoCell.swift */,
+				80ABF8AC29D45C4500DACD0B /* CollectionView.swift */,
+				80E9A2F429D33FE900E78BA8 /* PhotoGalleryView.swift */,
+			);
+			path = Photos;
+			sourceTree = "<group>";
+		};
+		80421FB629DDC6E200AE9FDE /* Newsfeed */ = {
+			isa = PBXGroup;
+			children = (
+				80F5580F29A91F07000D3661 /* NewsfeedView.swift */,
+				80421FB929DDC74D00AE9FDE /* PostView.swift */,
+			);
+			path = Newsfeed;
+			sourceTree = "<group>";
+		};
+		80421FB729DDC6F300AE9FDE /* Messenger */ = {
+			isa = PBXGroup;
+			children = (
+				80E9A2F229D33E9A00E78BA8 /* MessengerView.swift */,
+			);
+			path = Messenger;
+			sourceTree = "<group>";
+		};
 		808444D329A208080023AFCF /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +249,7 @@
 				80F5580729A90A34000D3661 /* Friend.swift */,
 				80E9F07929D128F000710522 /* UserInfo.swift */,
 				80E9A2F629D3492B00E78BA8 /* Photo.swift */,
+				80421FA829DDADE900AE9FDE /* Newsfeed.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -171,10 +257,9 @@
 		808444D429A2080E0023AFCF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				80F5580529A90A11000D3661 /* FriendsViewModel.swift */,
-				80E9F07729D125E500710522 /* ProfileViewModel.swift */,
-				80E9A2F829D34CD400E78BA8 /* PhotoGalleryViewModel.swift */,
-				80E9A2FA29D34D7F00E78BA8 /* PhotoViewModel.swift */,
+				80421FAA29DDB07B00AE9FDE /* Profile */,
+				80421FAB29DDB08400AE9FDE /* Newsfeed */,
+				80421FAC29DDB08E00AE9FDE /* PhotoGallery */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -183,13 +268,11 @@
 			isa = PBXGroup;
 			children = (
 				80F5580C29A9197E000D3661 /* Auth */,
-				80ABF8AB29D45C3400DACD0B /* Controls */,
+				80421FB729DDC6F300AE9FDE /* Messenger */,
+				80421FB629DDC6E200AE9FDE /* Newsfeed */,
+				80421FB529DDC6B900AE9FDE /* Photos */,
 				8022A4F029A207B500041D72 /* Preview Content */,
-				808444DD29A221890023AFCF /* AppView.swift */,
-				80F5580D29A91A9F000D3661 /* ProfileView.swift */,
-				80F5580F29A91F07000D3661 /* FriendsView.swift */,
-				80E9A2F229D33E9A00E78BA8 /* MessengerView.swift */,
-				80E9A2F429D33FE900E78BA8 /* PhotoGalleryView.swift */,
+				80421FB429DDC6A900AE9FDE /* Profile */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,15 +284,6 @@
 				8022A4F529A207B500041D72 /* VK_Client.xcdatamodeld */,
 			);
 			path = Storage;
-			sourceTree = "<group>";
-		};
-		80ABF8AB29D45C3400DACD0B /* Controls */ = {
-			isa = PBXGroup;
-			children = (
-				80ABF8AC29D45C4500DACD0B /* CollectionView.swift */,
-				80ABF8AE29D46F6A00DACD0B /* PhotoCell.swift */,
-			);
-			path = Controls;
 			sourceTree = "<group>";
 		};
 		80E9F07B29D12CE000710522 /* API */ = {
@@ -373,21 +447,27 @@
 				80E9A2F329D33E9A00E78BA8 /* MessengerView.swift in Sources */,
 				8022A4F729A207B500041D72 /* VK_Client.xcdatamodeld in Sources */,
 				80E9F07A29D128F000710522 /* UserInfo.swift in Sources */,
+				80421FBC29DDCA6F00AE9FDE /* DateExtensions.swift in Sources */,
 				80ABF8AF29D46F6A00DACD0B /* PhotoCell.swift in Sources */,
 				808444D829A20C190023AFCF /* WebPageView.swift in Sources */,
 				80ABF8AD29D45C4500DACD0B /* CollectionView.swift in Sources */,
 				808444DE29A221890023AFCF /* AppView.swift in Sources */,
 				80F5580429A8F88B000D3661 /* VkApiProtocol.swift in Sources */,
+				80421FA929DDADE900AE9FDE /* Newsfeed.swift in Sources */,
 				80E9F07D29D12CF900710522 /* AuthorizationInfo.swift in Sources */,
 				80E9F07829D125E500710522 /* ProfileViewModel.swift in Sources */,
 				80E9A2F729D3492B00E78BA8 /* Photo.swift in Sources */,
+				80421FB329DDBDDD00AE9FDE /* NumberExtensions.swift in Sources */,
 				80F5580829A90A34000D3661 /* Friend.swift in Sources */,
 				8022A4EB29A207B400041D72 /* VK_ClientApp.swift in Sources */,
-				80F5581029A91F07000D3661 /* FriendsView.swift in Sources */,
+				80F5581029A91F07000D3661 /* NewsfeedView.swift in Sources */,
 				80F5580E29A91A9F000D3661 /* ProfileView.swift in Sources */,
 				80E9A2FB29D34D7F00E78BA8 /* PhotoViewModel.swift in Sources */,
-				80F5580629A90A11000D3661 /* FriendsViewModel.swift in Sources */,
+				80421FAE29DDB9FB00AE9FDE /* PostViewModel.swift in Sources */,
+				80F5580629A90A11000D3661 /* NewsfeedViewModel.swift in Sources */,
 				80E9A2F529D33FE900E78BA8 /* PhotoGalleryView.swift in Sources */,
+				80421FB029DDBA6C00AE9FDE /* NewsfeedViewModelFactory.swift in Sources */,
+				80421FBA29DDC74D00AE9FDE /* PostView.swift in Sources */,
 				80E9A2F929D34CD400E78BA8 /* PhotoGalleryViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,7 +553,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -527,7 +607,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -548,6 +628,8 @@
 				DEVELOPMENT_TEAM = 47S9Q57UGQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "ВК";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -577,6 +659,8 @@
 				DEVELOPMENT_TEAM = 47S9Q57UGQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "ВК";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

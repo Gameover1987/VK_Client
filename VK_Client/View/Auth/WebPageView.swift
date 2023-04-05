@@ -22,7 +22,7 @@ struct WebPageView: UIViewRepresentable {
             URLQueryItem(name: "redirect_uri", value: "https://oauth.vk.com/blank.html"),
             URLQueryItem(name: "display", value: "mobile"),
             URLQueryItem(name: "response_type", value: "token"),
-            URLQueryItem(name: "scope", value: "friends,notify,photos,wall,email,mail,groups,stats")
+            URLQueryItem(name: "scope", value: "friends,newsfeed,photos,wall,email,mail,groups,stats")
         ]
         
         guard let url = urlComponent.url else {

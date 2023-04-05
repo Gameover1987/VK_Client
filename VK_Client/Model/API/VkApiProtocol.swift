@@ -6,6 +6,8 @@ protocol VkApiProtocol : ObservableObject {
     
     var authorizationInfo: AuthorizationInfo? {get set}
     
+    func getNews(completion: @escaping (Result<Newsfeed, Error>) -> Void)
+    
     func getFriends(completion: @escaping (Result<[Friend], Error>) -> Void)
     
     func getUserInfo(completion: @escaping (Result<UserInfo, Error>) -> Void)
@@ -14,6 +16,36 @@ protocol VkApiProtocol : ObservableObject {
 }
 
 final class VkApi : ObservableObject, VkApiProtocol {
+    func getNews(completion: @escaping (Result<Newsfeed, Error>) -> Void) {
+        guard let authorizationInfo = authorizationInfo else {return}
+        
+        let url = "https://api.vk.com/method/newsfeed.get"
+        
+        let params: Parameters = [
+            "access_token": authorizationInfo.token,
+            "v": "5.131"
+        ]
+        
+        AF.request(url, method: .post, parameters: params).response { result in
+            
+            if let error = result.error {
+                print(error)
+                completion(.failure(error))
+            }
+            
+            guard let data = result.data else {return}
+     
+            do {
+                let decoder = JSONDecoder()
+                let newsfeedResponse = try decoder.decode(NewsfeedResponse.self, from: data)
+                completion(.success(newsfeedResponse.response))
+            }
+            catch(let error) {
+                print(error)
+            }
+        }
+    }
+    
 
     static let shared = VkApi()
     
