@@ -4,11 +4,11 @@ import Foundation
 final class NewsfeedViewModel : ObservableObject {
     
     private let vkApi: any VkApiProtocol
-    private let viewModelFactory: NewsfeedViewModelFactoryProtocol
+    private let viewModelFactory: ViewModelFactoryProtocol
     
     @Published var posts: [PostViewModel] = []
     
-    init (vkApi: any VkApiProtocol, viewModelFactory: NewsfeedViewModelFactoryProtocol ) {
+    init (vkApi: any VkApiProtocol, viewModelFactory: ViewModelFactoryProtocol ) {
         self.vkApi = vkApi
         self.viewModelFactory = viewModelFactory
     }

@@ -5,26 +5,28 @@ import SDWebImageSwiftUI
 
 struct NewsfeedView: View {
     @ObservedObject var newsFeedViewModel = NewsfeedViewModel(vkApi: VkApi.shared,
-                                                              viewModelFactory: NewsfeedViewModelFactory.shared)
+                                                              viewModelFactory: ViewModelFactory.shared)
     
     var body: some View {
         
         NavigationView {
-
-            ScrollView {
-                if (newsFeedViewModel.posts.count > 0) {
+            
+            if (newsFeedViewModel.posts.count == 0) {
+                VStack {
+                    Text("Здесь пока что нет новостей")
+                }
+                .navigationTitle("Все обо всем и обо всех")
+            }
+            else {
+                ScrollView {
                     ForEach(newsFeedViewModel.posts) { post in
                         PostView(post)
                     }
-                } else {
-                    VStack {
-                        Text("Здесь пока что нет новостей")
-                    }
                 }
+                
+                .listStyle(.inset)
+                .navigationTitle("Все обо всем и обо всех")
             }
-           
-            .listStyle(.inset)
-            .navigationTitle("Все обо всем и обо всех")
         }
         .onAppear {
             newsFeedViewModel.load()

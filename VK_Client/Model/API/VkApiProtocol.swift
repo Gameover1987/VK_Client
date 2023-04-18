@@ -46,7 +46,7 @@ final class VkApi : ObservableObject, VkApiProtocol {
                 let decoder = JSONDecoder()
                 let newsfeedResponse = try decoder.decode(NewsfeedResponse.self, from: data)
                 //completion(.success(NewsfeedResponse(response: Newsfeed(items: [], profiles: [], groups: [], nextFrom: "123")).response))
-                completion(.success(newsfeedResponse.response))
+                    completion(.success(newsfeedResponse.response))
             }
             catch(let error) {
                 print(error)
@@ -61,7 +61,7 @@ final class VkApi : ObservableObject, VkApiProtocol {
         
         let params: Parameters = [
             "access_token": authorizationInfo.token,
-            "fields": "photo_50",
+            "fields": "bdate, city, country, photo_50, photo_200_orig, status",
             "v": "5.131"
         ]
         

@@ -1,13 +1,15 @@
 
 import Foundation
 
-protocol NewsfeedViewModelFactoryProtocol {
+protocol ViewModelFactoryProtocol {
     func getPosts(by newsfeed: Newsfeed) -> [PostViewModel]
+    
+    func getFriend(by friend: Friend) -> FriendViewModel
 }
 
-final class NewsfeedViewModelFactory : NewsfeedViewModelFactoryProtocol {
+final class ViewModelFactory : ViewModelFactoryProtocol {
     
-    static let shared = NewsfeedViewModelFactory()
+    static let shared = ViewModelFactory()
     
     private init() {
         
@@ -45,4 +47,7 @@ final class NewsfeedViewModelFactory : NewsfeedViewModelFactoryProtocol {
         return postViewModels
     }
     
+    func getFriend(by friend: Friend) -> FriendViewModel {
+        return FriendViewModel(friend: friend)
+    }
 }

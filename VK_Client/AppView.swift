@@ -11,9 +11,9 @@ struct AppView: View {
                     Image(systemName: "house")
                 }
             
-            MessengerView()
+            FriendsView()
                 .tabItem {
-                    Image(systemName: "messege")
+                    Image(systemName: "person.2")
                 }
             
             PhotoGalleryView()
