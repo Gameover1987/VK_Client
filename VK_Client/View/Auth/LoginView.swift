@@ -10,7 +10,14 @@ struct LoginView: View {
             AppView()
                 .environmentObject(vkApi)
         } else {
-            WebPageView(authorizationInfo: $vkApi.authorizationInfo)
+            ZStack {
+                WebPageView(authorizationInfo: $vkApi.authorizationInfo)
+      
+                LoadingView(isShowing: $vkApi.isLoading, message: "Загрузка...") {
+                    EmptyView()
+                }
+            }
+            
         }
     }
 }

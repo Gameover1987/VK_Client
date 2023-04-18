@@ -21,7 +21,13 @@ final class VkApi : ObservableObject, VkApiProtocol {
     
     private init() { }
     
-    @Published var authorizationInfo: AuthorizationInfo?
+    @Published var authorizationInfo: AuthorizationInfo? {
+        didSet {
+            isLoading = false
+        }
+    }
+    
+    @Published var isLoading: Bool = true
     
     func getNews(completion: @escaping (Result<Newsfeed, Error>) -> Void) {
         guard let authorizationInfo = authorizationInfo else {return}

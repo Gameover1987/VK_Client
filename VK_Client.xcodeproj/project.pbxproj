@@ -11,6 +11,7 @@
 		8002773D29EE8BB900493FB3 /* FriendItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8002773C29EE8BB900493FB3 /* FriendItemView.swift */; };
 		8002773F29EE90B500493FB3 /* FriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8002773E29EE90B500493FB3 /* FriendView.swift */; };
 		8002774229EE929800493FB3 /* FriendViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8002774129EE929800493FB3 /* FriendViewModel.swift */; };
+		8002774429EEA42100493FB3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8002774329EEA42100493FB3 /* LoadingView.swift */; };
 		8022A4EB29A207B400041D72 /* VK_ClientApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8022A4EA29A207B400041D72 /* VK_ClientApp.swift */; };
 		8022A4EF29A207B500041D72 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8022A4EE29A207B500041D72 /* Assets.xcassets */; };
 		8022A4F229A207B500041D72 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8022A4F129A207B500041D72 /* Preview Assets.xcassets */; };
@@ -67,6 +68,7 @@
 		8002773C29EE8BB900493FB3 /* FriendItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendItemView.swift; sourceTree = "<group>"; };
 		8002773E29EE90B500493FB3 /* FriendView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendView.swift; sourceTree = "<group>"; };
 		8002774129EE929800493FB3 /* FriendViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendViewModel.swift; sourceTree = "<group>"; };
+		8002774329EEA42100493FB3 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		8022A4E729A207B400041D72 /* VK_Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VK_Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8022A4EA29A207B400041D72 /* VK_ClientApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VK_ClientApp.swift; sourceTree = "<group>"; };
 		8022A4EE29A207B500041D72 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -320,6 +322,7 @@
 			children = (
 				808444D729A20C190023AFCF /* WebPageView.swift */,
 				808444D929A210880023AFCF /* LoginView.swift */,
+				8002774329EEA42100493FB3 /* LoadingView.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -475,6 +478,7 @@
 				80ABF8AD29D45C4500DACD0B /* CollectionView.swift in Sources */,
 				808444DE29A221890023AFCF /* AppView.swift in Sources */,
 				8002774229EE929800493FB3 /* FriendViewModel.swift in Sources */,
+				8002774429EEA42100493FB3 /* LoadingView.swift in Sources */,
 				80F5580429A8F88B000D3661 /* VkApiProtocol.swift in Sources */,
 				80421FA929DDADE900AE9FDE /* Newsfeed.swift in Sources */,
 				80E9F07D29D12CF900710522 /* AuthorizationInfo.swift in Sources */,
