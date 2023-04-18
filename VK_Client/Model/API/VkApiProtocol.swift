@@ -16,6 +16,13 @@ protocol VkApiProtocol : ObservableObject {
 }
 
 final class VkApi : ObservableObject, VkApiProtocol {
+    
+    static let shared = VkApi()
+    
+    private init() { }
+    
+    @Published var authorizationInfo: AuthorizationInfo?
+    
     func getNews(completion: @escaping (Result<Newsfeed, Error>) -> Void) {
         guard let authorizationInfo = authorizationInfo else {return}
         
@@ -38,6 +45,7 @@ final class VkApi : ObservableObject, VkApiProtocol {
             do {
                 let decoder = JSONDecoder()
                 let newsfeedResponse = try decoder.decode(NewsfeedResponse.self, from: data)
+                //completion(.success(NewsfeedResponse(response: Newsfeed(items: [], profiles: [], groups: [], nextFrom: "123")).response))
                 completion(.success(newsfeedResponse.response))
             }
             catch(let error) {
@@ -45,13 +53,6 @@ final class VkApi : ObservableObject, VkApiProtocol {
             }
         }
     }
-    
-
-    static let shared = VkApi()
-    
-    private init() { }
-    
-    @Published var authorizationInfo: AuthorizationInfo?
     
     func getFriends(completion: @escaping (Result<[Friend], Error>) -> Void) {
         guard let authorizationInfo = authorizationInfo else {return}

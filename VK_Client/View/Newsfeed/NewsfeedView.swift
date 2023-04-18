@@ -12,8 +12,14 @@ struct NewsfeedView: View {
         NavigationView {
 
             ScrollView {
-                ForEach(newsFeedViewModel.posts) { post in
-                    PostView(post)
+                if (newsFeedViewModel.posts.count > 0) {
+                    ForEach(newsFeedViewModel.posts) { post in
+                        PostView(post)
+                    }
+                } else {
+                    VStack {
+                        Text("Здесь пока что нет новостей")
+                    }
                 }
             }
            

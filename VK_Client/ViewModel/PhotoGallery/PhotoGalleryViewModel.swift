@@ -41,6 +41,6 @@ final class PhotoGalleryViewModel : ObservableObject {
         }
         
         offset += count
-        print("Offset = \(offset), Count = \(count)")
+        //print("Offset = \(offset), Count = \(count)")
     }
 }
