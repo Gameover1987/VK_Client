@@ -55,6 +55,10 @@ final class WebViewCoordinator: NSObject, WKNavigationDelegate {
         self.authorizationInfo = authorizationInfo
     }
     
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        VkApi.shared.isLoading = false
+    }
+    
     func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
         guard let url = navigationResponse.response.url,
               url.path == "/blank.html",
